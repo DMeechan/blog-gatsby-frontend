@@ -1,10 +1,10 @@
 {
   "development": {
     "apiUrl": "https://ghost.2fwd1back.com",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0"
+    "contentApiKey": "94981726f82daba33b671d1651"
   },
   "production": {
     "apiUrl": "https://ghost.2fwd1back.com",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0"
+    "contentApiKey": "94981726f82daba33b671d1651"
   }
 }
