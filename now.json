@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "name": "2fwd 1back",
+  "alias": "2fwd1back.com",
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1",
+      "headers": { "cache-control": "public,max-age=604800,immutable" }
+    },
+    {
+      "src": "/(.*\\.(js|json|css|ico|png)$)",
+      "dest": "/$1",
+      "headers": { "cache-control": "public,max-age=604800,immutable" }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1",
+      "headers": { "cache-control": "public, max-age=0, must-revalidate" }
+    }
+  ],
+  "builds": [
+    {
+      "use": "@now/static-build",
+      "src": "package.json",
+      "config": { "distDir": "public" }
+    }
+  ]
+}
