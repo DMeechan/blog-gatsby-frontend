@@ -19,6 +19,7 @@ import "../../styles/app.css";
  *
  */
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
+    const currentYear = new Date().getFullYear();
     const site = data.allGhostSettings.edges[0].node;
     const twitterUrl = site.twitter
         ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
@@ -151,8 +152,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> ©{" "}
-                                {config.currentYear} &mdash; Published with{" "}
+                                <Link to="/">{site.title}</Link> © {currentYear}{" "}
+                                &mdash; Published with{" "}
                                 <a
                                     className="site-foot-nav-item"
                                     href="https://ghost.org"
