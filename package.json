@@ -1,22 +1,17 @@
 {
-  "name": "gatsby-starter-ghost",
+  "name": "blog-gatsby-frontend",
   "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
   "version": "1.0.0",
-  "license": "MIT",
-  "author": "Ghost Foundation",
-  "homepage": "https://docs.ghost.org/api/gatsby/",
+  "author": "Daniel Meechan",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tryghost/gatsby-starter-ghost.git"
+    "url": "git+https://github.com/DMeechan/blog-gatsby-frontend"
   },
   "resolutions": {
     "sharp": "0.25.2"
   },
   "engines": {
     "node": ">= 10.13.0"
-  },
-  "bugs": {
-    "url": "https://github.com/tryghost/gatsby-starter-ghost/issues"
   },
   "keywords": [
     "gatsby",
@@ -51,12 +46,25 @@
     "gatsby-plugin-offline": "3.1.5",
     "gatsby-plugin-react-helmet": "3.2.5",
     "gatsby-plugin-sharp": "2.5.7",
+    "gatsby-plugin-typography": "^2.4.4",
+    "gatsby-remark-copy-linked-files": "^2.2.4",
+    "gatsby-remark-images": "^3.2.6",
+    "gatsby-remark-prismjs": "^3.4.5",
+    "gatsby-remark-responsive-iframe": "^2.3.4",
+    "gatsby-remark-smartypants": "^2.2.4",
     "gatsby-source-filesystem": "2.2.5",
     "gatsby-source-ghost": "4.0.4",
+    "gatsby-transformer-remark": "^2.7.5",
     "gatsby-transformer-sharp": "2.4.7",
     "lodash": "4.17.15",
+    "prismjs": "^1.20.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-helmet": "5.2.1"
+    "react-helmet": "5.2.1",
+    "react-typography": "^0.16.19",
+    "typeface-merriweather": "^0.0.72",
+    "typeface-montserrat": "^0.0.75",
+    "typography": "^0.16.19",
+    "typography-theme-wordpress-2016": "^0.16.19"
   }
 }

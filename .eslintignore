@@ -2,3 +2,8 @@ public/**
 plugins/**/*.js
 plugins/*/node_modules/*
 !plugins/*/src/*.js
+
+.cache
+package.json
+package-lock.json
+public

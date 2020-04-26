@@ -13,4 +13,12 @@ module.exports = {
     siteIcon: `favicon.png`, // Logo in /static dir used for SEO, RSS, and App manifest
     backgroundColor: `#e9e9e9`, // Used for Offline Manifest
     themeColor: `#15171A`, // Used for Offline Manifest
+
+    author: {
+        name: `Daniel Meechan`,
+        summary: `I try to build useful things then teach what I’ve learnt.`,
+    },
+    social: {
+        twitter: `DMeechan1`,
+    },
 };
