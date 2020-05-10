@@ -5,6 +5,6 @@
   },
   "production": {
     "apiUrl": "https://ghost.2fwd1back.com",
-    "contentApiKey": "94981726f82daba33b671d1651"
+    "contentApiKey": "<key>"
   }
 }

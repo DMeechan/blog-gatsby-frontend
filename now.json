@@ -10,12 +10,12 @@
     },
     {
       "src": "/(.*\\.(js|json|css|ico|png)$)",
-      "dest": "/$1",
+      "dest": "/public/$1",
       "headers": { "cache-control": "public,max-age=604800,immutable" }
     },
     {
       "src": "/(.*)",
-      "dest": "/$1",
+      "dest": "/public/$1",
       "headers": { "cache-control": "public, max-age=0, must-revalidate" }
     }
   ],
