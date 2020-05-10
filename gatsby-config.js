@@ -2,29 +2,36 @@ const path = require(`path`);
 
 const config = require(`./src/utils/siteConfig`);
 const generateRSSFeed = require(`./src/utils/rss/generate-feed`);
+const ghostJson = require(`./.ghost`);
 
-let ghostConfig;
+// Try to fetch Ghost config keys from environment
+const {
+    GHOST_API_URL,
+    GHOST_CONTENT_API_KEY,
+    NODE_ENV: environment,
+} = process.env;
 
-try {
-    ghostConfig = require(`./.ghost`);
-} catch (e) {
-    ghostConfig = {
-        production: {
-            apiUrl: process.env.GHOST_API_URL,
-            contentApiKey: process.env.GHOST_CONTENT_API_KEY,
-        },
-    };
-} finally {
-    const { apiUrl, contentApiKey } =
-        process.env.NODE_ENV === `development`
-            ? ghostConfig.development
-            : ghostConfig.production;
+const isDev = environment === `development`;
+const missingEnvKeys = !GHOST_API_URL || !GHOST_CONTENT_API_KEY;
 
-    if (!apiUrl || !contentApiKey || contentApiKey.match(/<key>/)) {
-        throw new Error(
-            `GHOST_API_URL and GHOST_CONTENT_API_KEY are required to build. Check the README.`
-        ); // eslint-disable-line
-    }
+// Create Ghost config using env keys or .ghost.json file
+const ghostConfig = missingEnvKeys
+    ? ghostJson
+    : {
+          production: {
+              apiUrl: GHOST_API_URL,
+              contentApiKey: GHOST_CONTENT_API_KEY,
+          },
+      };
+
+const ghostKeys = isDev ? ghostConfig.development : ghostConfig.production;
+const { apiUrl, contentApiKey } = ghostKeys;
+
+const missingKeys = !apiUrl || !contentApiKey;
+if (missingKeys || contentApiKey.match(/<key>/) || !apiUrl.includes("http")) {
+    throw new Error(
+        `GHOST_API_URL and GHOST_CONTENT_API_KEY are required to build. Check the README.`
+    ); // eslint-disable-line
 }
 
 /**
@@ -87,10 +94,7 @@ module.exports = {
         `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-source-ghost`,
-            options:
-                process.env.NODE_ENV === `development`
-                    ? ghostConfig.development
-                    : ghostConfig.production,
+            options: ghostKeys,
         },
         /**
          *  Utility Plugins

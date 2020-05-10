@@ -15,7 +15,7 @@ module.exports = {
     themeColor: `#15171A`, // Used for Offline Manifest
 
     author: {
-        name: `Daniel Meechan`,
+        name: `Daniel`,
         summary: `I try to build useful things then teach what I’ve learnt.`,
     },
     social: {
