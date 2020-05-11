@@ -13,10 +13,6 @@
   ],
   "routes": [
     {
-      "src": "/til-how-to-manage-your-youtube-subscriptions-in-2019",
-      "dest": "/til-how-to-manage-your-youtube-subscriptions-in-2020"
-    },
-    {
       "src": "/static/(.*)",
       "dest": "/static/$1",
       "headers": {
