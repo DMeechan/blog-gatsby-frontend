@@ -6,24 +6,40 @@
     {
       "src": "/static/(.*)",
       "dest": "/static/$1",
-      "headers": { "cache-control": "public,max-age=604800,immutable" }
+      "headers": {
+        "cache-control": "public,max-age=604800,immutable"
+      }
     },
     {
       "src": "/(.*\\.(js|json|css|ico|png)$)",
       "dest": "/public/$1",
-      "headers": { "cache-control": "public,max-age=604800,immutable" }
+      "headers": {
+        "cache-control": "public,max-age=604800,immutable"
+      }
     },
     {
       "src": "/(.*)",
       "dest": "/public/$1",
-      "headers": { "cache-control": "public, max-age=0, must-revalidate" }
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate"
+      }
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "status": 404,
+      "dest": "/public/404"
     }
   ],
   "builds": [
     {
       "use": "@now/static-build",
       "src": "package.json",
-      "config": { "distDir": "public" }
+      "config": {
+        "distDir": "public"
+      }
     }
   ]
 }
