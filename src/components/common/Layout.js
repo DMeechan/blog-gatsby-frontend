@@ -153,15 +153,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
                                 <Link to="/">{site.title}</Link> © {currentYear}{" "}
-                                &mdash; Published with{" "}
-                                <a
-                                    className="site-foot-nav-item"
-                                    href="https://ghost.org"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Ghost
-                                </a>
+                                &mdash; Published with Ghost & Gatsby
                             </div>
                             <div className="site-foot-nav-right">
                                 <Navigation
